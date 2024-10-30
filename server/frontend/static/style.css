@@ -124,3 +124,79 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+.contact-card {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px !important;
+  }
+  
+  .contact-image {
+    width: 80%;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+  .contact-board-img {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .contact-details {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .contact-details p {
+    margin: 10px 0;
+    color: #1a73e8; /* Blue color for contact information */
+  }
+  
+  .contact-details strong {
+    color: #333; /* Darker color for labels */
+  }
+
+.contact-board::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Darker gray line */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 20px;
+}
+
+.contact-board {
+    display: flex;
+    flex-direction: row;
+    position: relative; /* Required for positioning the pseudo-element */
+    padding-top: 20px;
+}
+
+.contact-image-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-image-container::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.2); /* Soft gray line */
+    margin: 10px auto;
+}
