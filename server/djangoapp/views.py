@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
@@ -42,7 +41,10 @@ def registration(request):
     email = data["email"]
 
     if User.objects.filter(username=username).exists():
-        return JsonResponse({"userName": username, "error": "Already Registered"})
+        return JsonResponse({
+            "userName": username,
+            "error": "Already Registered"
+        })
 
     user = User.objects.create_user(
         username=username,
@@ -96,8 +98,14 @@ def add_review(request):
             return JsonResponse({"status": 200})
         except Exception as e:
             logger.error("Error posting review: %s", e)
-            return JsonResponse({"status": 401, "message": "Error in posting review"})
-    return JsonResponse({"status": 403, "message": "Unauthorized"})
+            return JsonResponse({
+                "status": 401,
+                "message": "Error in posting review"
+            })
+    return JsonResponse({
+        "status": 403,
+        "message": "Unauthorized"
+    })
 
 
 # Get cars view
